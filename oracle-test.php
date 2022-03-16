@@ -56,6 +56,15 @@
         </form>
 
         <hr />
+        
+        <h2>Select all name in DemoTable</h2>
+
+        <form method="GET" action="oracle-test.php"> <!--refresh page when submitted-->
+            <input type="hidden" id="selectQueryRequest" name="selectQueryRequest">
+            <input type="submit" value="Select" name="selectSubmit"></p>
+        </form>
+
+        <hr />
 
         <h2>Count the Tuples in DemoTable</h2>
         <form method="GET" action="oracle-test.php"> <!--refresh page when submitted-->
