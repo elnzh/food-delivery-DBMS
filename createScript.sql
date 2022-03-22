@@ -19,4 +19,4 @@ INSERT INTO Customer VALUES ('MohammedLee', 'theMostCommonName@gmail.com','2366 
 -- How to run SQL Plus to run script:
 -- in command line: sqlplus ora_cwl@stu (ora_smethven@stu for Skye)
 -- password: a<student_number> (a11305109 for Skye)
--- run start databaseSetupScript.sql
+-- run start createScript.sql
