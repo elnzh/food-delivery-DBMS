@@ -16,7 +16,7 @@
   extension.  You must also change the username and password on the
   OCILogon below to be your ORACLE username and password -->
 
-<html>
+  <html>
     <head>
         <title>CPSC 304 PHP/Oracle Demonstration</title>
     </head>
@@ -56,7 +56,7 @@
         </form>
 
         <hr />
-        
+
         <h2>Select all name in DemoTable</h2>
 
         <form method="GET" action="oracle-test.php"> <!--refresh page when submitted-->
@@ -164,7 +164,7 @@
 
             // Your username is ora_(CWL_ID) and the password is a(student number). For example,
 			// ora_platypus is the username and a12345678 is the password.
-            $db_conn = OCILogon("ora_mine01", "a95135893", "dbhost.students.cs.ubc.ca:1522/stu");
+            $db_conn = OCILogon("ora_smethven", "a11305109", "dbhost.students.cs.ubc.ca:1522/stu");
 
             if ($db_conn) {
                 debugAlertMessage("Database is Connected");
@@ -192,6 +192,15 @@
 
             // you need the wrap the old name and new name values with single quotations
             executePlainSQL("UPDATE demoTable SET name='" . $new_name . "' WHERE name='" . $old_name . "'");
+            OCICommit($db_conn);
+        }
+
+        function handleSelectRequest() {
+            global $db_conn;
+
+            // you need the wrap the old name and new name values with single quotations
+            $result = executePlainSQL("SELECT * FROM demoTable");
+            printResult($result);
             OCICommit($db_conn);
         }
 
@@ -255,6 +264,8 @@
             if (connectToDB()) {
                 if (array_key_exists('countTuples', $_GET)) {
                     handleCountRequest();
+                } else if (array_key_exists('selectQueryRequest', $_GET)){
+                    handleSelectRequest();
                 }
 
                 disconnectFromDB();
@@ -263,7 +274,7 @@
 
 		if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit'])) {
             handlePOSTRequest();
-        } else if (isset($_GET['countTupleRequest'])) {
+        } else if (isset($_GET['countTupleRequest']) || isset($_GET['selectQueryRequest'])) {
             handleGETRequest();
         }
 		?>
