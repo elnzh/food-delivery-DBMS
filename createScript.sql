@@ -15,7 +15,7 @@ CREATE TABLE Order(
     order_number  char(25),
 	order_price double,
 	order_time datetime,     
-	account_username varchar(50) NOT NULL,
+	account_username varchar(20) NOT NULL,
 	food_provider_name varchar(50) NOT NULL,
 	food_provider_location varchar(50) NOT NULL,
 	PRIMARY KEY(order_number),
