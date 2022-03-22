@@ -1,7 +1,7 @@
 CREATE TABLE Customer(
     account_username varchar(20),
-    email varchar(20),
-    address varchar(20),
+    email varchar(50),
+    address varchar(50),
     customer_name varchar(20),
     PRIMARY KEY(account_username)
 );
