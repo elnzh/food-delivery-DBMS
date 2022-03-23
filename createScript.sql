@@ -6,6 +6,7 @@ CREATE TABLE Customer(
     PRIMARY KEY(account_username)
 );
 
+
 INSERT INTO Customer VALUES ('Ellen123', 'ellen123@gmail.com','2366 Main Mall', 'Ellen');
 INSERT INTO Customer VALUES ('Skye321', 'Skye321@gmail.com','6245 Agronomy Rd','Skye');
 INSERT INTO Customer VALUES ('Charlie5', 'Charlie5@gmail.com','2335 Engineering Rd', 'Charlie');
